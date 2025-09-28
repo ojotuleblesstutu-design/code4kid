@@ -1,0 +1,101 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title> Chat with my AI friend</title>
+		
+		<style>
+			.main-bg {background-color:#e9edef}
+			#bio {
+				max-width:420px;margin-right:auto; margin-left:auto;background-color:#ffffff;padding:20px;border-radius:10px;text-align:center;box-shadow: 0 2px 8px #bbb
+			}
+			#toptext {color: grey}
+			.div-2 {background-color:#f0f8ff;padding-top:10px;padding-bottom:10px;padding-left:15px; padding-right:10px; margin-top:20px; margin-bottom:20px;border-radius:5px ;display: flex;gap:9px}
+			.label-1 {font-size:15px;width:570%;text-align:left}
+			.input-1 {width:990%;height:20px;padding-left:15px}
+			.toch-me {background-color:#00a884; color:#ffffff; border-radius:9px;height:40px;text-align:center;width:400%; margin-right:1px}
+			#id-2 {color:white !important}
+			.select-option-area {display: flex; gap:10px ;height: 40px; margin-bottom: 10px; background-color:#ffffff}
+			.select-option {border-radius: 5px; width: 50%; background-color:#ffffff; border: 1px solid grey}
+			.personility-box {border-radius:5px; width: 100%;border: 1px solid grey}
+			.div-4 {background-color: #f2ebf2; height: 300px; padding: 10px; border-radius: 5px}
+			.div-5 {text-align: left}
+			.person {color: green; margin-bottom: 10px}
+			.reply-me-bubble {background-color: lightgreen; border-radius: 100px; border-bottom-right-radius: 0px;  padding: 10px}
+			.div-6 {text-align: right}
+			.ai {color: green; margin-bottom: 10px}
+			.reply-me-bubble2 {background-color: white; border-radius: 100px; border-bottom-left-radius: 0px;  padding: 10px}
+			.div-7 {text-align:left}
+			.person {color:green;margin-bottom:10px}
+			.hello-wa {background-color:lightgreen;padding:10px;border-radius:70px;border-bottom-right-radius:0px}
+			.div-8 {text-align:right}
+			.ai {color:green;margin-bottom:10px}
+			.sweet-pie {background-color:white;padding:10px;border-radius:80px;border-bottom-left-radius:0px}
+			.div-9 {text-align: left}
+			.person {color: green; margin-bottom: 10px}
+			.reply-me-bubble3 {background-color: lightgreen; border-radius: 100px; border-bottom-right-radius: 0px;  padding: 10px}
+			.div-10 {display: flex; gap: 10px}
+			.message-box {border-radius:5px; width:90%; height:45px;margin-bottom:0px;margin-top:10px; border: 1px solid grey}
+			.click-me {background-color:#008f72;color:white;height:39px;border-radius:10px;width:30%;margin-top:15px;margin-bottom:1px}
+		</style>
+</head>
+<body class="main-bg">
+	<div id="bio">   
+		<h1 id="toptext"> Chat with my AI friend</h1>
+		<div class="div-2">
+			<label class="label-1">OpenAI API Key:</label>
+			<input class="input-1" placeholder="Enter your openAI API key"/>
+			<button class="toch-me" id="id-2"> Save key</button>
+		</div>
+		<div class="select-option-area">
+			<select class="select-option">
+				<option value="My mum"> My Mom</option>
+				<option value="My dad"> My Dad</option>
+				<option value="My sister">My Sister</option>
+				<option value="My Brother">My Brother</option>
+				<option value="My Grandma">My Grandma</option>
+				<option value="My Grandpa">My Grandpa</option>
+				<option value="My Aunt">My Aunt</option>
+				<option value="My Uncle">My Uncle</option>
+			</select>
+			<input class="personility-box" placeholder="Describe their personility..."/>
+		</div>
+		<div class="div-4">
+			<div class="div-5">
+				<div class="person">Me</div>
+				<div>
+					<span class="reply-me-bubble">hi</span>
+				</div>
+			</div>
+			<div class="div-6">
+				<div class="ai">My Mom (AI)</div>
+				<div>
+					<span class="reply-me-bubble2">Hey there! How's it going</span>
+				</div>
+			</div>
+			<div class="div-7"> 
+				<div class="person"> Me</div>
+					<span class="hello-wa"> hello mom</span>
+			</div>
+			<div class="div-8">
+				<div class="ai">My Mom (AI)</div>
+				<span class="sweet-pie">Hey! How are you, sweetie?</span>
+			</div>
+			<div class="div-9">
+				<div class="person">Me</div>
+				<span class="reply-me-bubble3">am fine</span>
+			</div>
+		</div>
+		<div class="div-10">
+			<input class="message-box" placeholder="Type a message..."/>
+			<button class="click-me">Send</button>
+		</div>
+		<div>
+			<h5 style="color:gray; text-align:left"> No saved chat found </h5>
+		</div>
+	</div>	
+</body>
+</html>
+<script>
+</script>
