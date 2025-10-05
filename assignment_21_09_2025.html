@@ -4,6 +4,25 @@
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width;initial-scale=1.0"/>
 	<title>Assignment</title>
+
+	<style>
+		.action-btn {
+			border: none; 
+			background-color: white; 
+			cursor: pointer;
+			color: #65676b;
+			padding-top: 5px;
+			padding-bottom: 5px; 
+			padding-left: 10px;
+			padding-right: 10px;
+			margin-right: 10px;
+			font-size: 14px;
+		}
+		.action-btn:hover {
+			background-color: #eeecec;
+			border-radius: 5px;
+		}
+	</style>
 </head>
 <body style="background-color:#eee;; margin:0;font-family:Arial, sans-serif;">
 	<div style="background-color: #1877f2; color:white; display: flex;justify-content: space-between;align-items: center; padding: 10px 20px;">
@@ -50,31 +69,75 @@
 					<hr style="border: none; border-top: 1px solid #ddd; margin: 8px 0;">
 				</div>
 			</div>
-			<div style="background-color:white;width:30%;border-radius:5px">
-				<div style="background-color:white">
-					<textarea placeholder="What's on your mind, Emma?" style="height:100px;width:90%;margin-top:10px;margin-left:20px;border-radius:5px;"></textarea>
-						<p><button style="background-color:blue;color:white;border:2px solid blue;border-radius:5px">Post</button></p>
+			<div style="background-color:white;width:30%;border-radius:5px; padding: 20px">
+				<div style="border: 1px solid #e4e6ea; border-radius: 5px; padding: 10px">
+					<div>
+						<textarea placeholder="What's on your mind, Emma?" style="border: none; width: 100%; height: 50px"></textarea>
+					</div>
+					<button style="background-color: #1a77f2; color: white; border: none; padding-top: 7px; padding-bottom: 7px; padding-left: 20px; padding-right: 20px; border-radius: 5px">Post</button>
 				</div>
-				<div style="background-color:white;margin-top: 12px;border:2px solid grey;border-radius:5px;padding:10px; text-align:center; color:white;">
-					<span style="display:inline-flex; align-items:center; justify-content:center;height:40px; width:40px; border-radius:50%; background-color:#e3f2fd; font-size:24px;">👧</span>
-					Emma Johnson
-					<p>Just finished my art project! i drew  a beautiful rainbow</p>
-					<hr style="border: none; border-top: 1px solid #ddd; margin: 8px 0";>
-					<button style="background-color:transparent;border:none">👍 Like </button>
-					<button style="background-color:transparent;border:none">💬 Comment </button>
-					<button style="background-color:transparent;border:none">📩 Share</button>
+
+				<div style="border: 1px solid #e4e6ea; border-radius: 5px; padding: 15px; margin-top: 10px">
+					<div style="display: flex">
+						<div style="display: flex; align-items: center; justify-content: center; border-radius: 1000px; background-color: #e3f2fd; height: 40px; width: 40px;">
+							👧
+						</div>
+						<div style="padding-left: 10px; margin-top: 5px">
+							<div style="font-size: 15px; font-weight: bold;">Emma Johnson</div>
+							<div style="font-size: 12px; color: #65676b">2 hours ago</div>
+						</div>
+					</div>
+					<p style="font-size: 14px">
+						Just finished my art project! I drew a beautiful rainbow unicorn! 🦄🌈 It took me all afternoon but I'm so happy with how it turned out!
+					</p>
+					<hr>
+					<div style="display: flex; margin-top: 10px">
+						<button class="action-btn">👍 Like </button>
+						<button class="action-btn">💬 Comment </button>
+						<button class="action-btn">📤 Share </button>
+					</div>
 				</div>
-				<div style="background-color:white;margin-top: 12px;border:2px solid grey;border-radius:5px;padding:10px; text-align:center; color:white;">
-					<span style="display:inline-flex; align-items:center; justify-content:center;height:40px; width:40px; border-radius:50%; background-color:#e3f2fd; font-size:24px;">👧</span>
-					Emma Johnson
-					<p>Had so much fun at the park yesterday</p>
-					<hr style="border: none; border-top: 1px solid #ddd; margin: 8px 0;">
+
+				<div style="border: 1px solid #e4e6ea; border-radius: 5px; padding: 15px; margin-top: 10px">
+					<div style="display: flex">
+						<div style="display: flex; align-items: center; justify-content: center; border-radius: 1000px; background-color: #e3f2fd; height: 40px; width: 40px;">
+							👧
+						</div>
+						<div style="padding-left: 10px; margin-top: 5px">
+							<div style="font-size: 15px; font-weight: bold;">Emma Johnson</div>
+							<div style="font-size: 12px; color: #65676b">Yesterday</div>
+						</div>
+					</div>
+					<p style="font-size: 14px">
+						Had so much fun at the park today! Played on the swings and made a new friend named Sarah. We both love drawing and reading books! 📚✨
+					</p>
+					<hr>
+					<div style="display: flex; margin-top: 10px">
+						<button class="action-btn">👍 Like </button>
+						<button class="action-btn">💬 Comment </button>
+						<button class="action-btn">📤 Share </button>
+					</div>
 				</div>
-				<div style="background-color:white;margin-top: 12px;border:2px solid grey;border-radius:5px;padding:10px; text-align:center; color:white;">
-					<span style="display:inline-flex; align-items:center; justify-content:center;height:40px; width:40px; border-radius:50%; background-color:#e3f2fd; font-size:24px;">👧</span>
-					Emma Johnson
-					<p> Got an A+ on my test yesterday</p>
-					<hr style="border: none; border-top: 1px solid #ddd; margin: 8px 0;">
+
+				<div style="border: 1px solid #e4e6ea; border-radius: 5px; padding: 15px; margin-top: 10px">
+					<div style="display: flex">
+						<div style="display: flex; align-items: center; justify-content: center; border-radius: 1000px; background-color: #e3f2fd; height: 40px; width: 40px;">
+							👧
+						</div>
+						<div style="padding-left: 10px; margin-top: 5px">
+							<div style="font-size: 15px; font-weight: bold;">Emma Johnson</div>
+							<div style="font-size: 12px; color: #65676b">3 days ago</div>
+						</div>
+					</div>
+					<p style="font-size: 14px">
+						Got an A+ on my math test! 🎉 My teacher said I'm doing great! Math is actually fun when you understand it! 📊
+					</p>
+					<hr>
+					<div style="display: flex; margin-top: 10px">
+						<button class="action-btn">👍 Like </button>
+						<button class="action-btn">💬 Comment </button>
+						<button class="action-btn">📤 Share </button>
+					</div>
 				</div>
 			</div>
 			<div  style=" background-color: white;width: 400px;border-radius: 5px;padding: 20px; box-shadow: 0 2px 5px gray;height:561px">
