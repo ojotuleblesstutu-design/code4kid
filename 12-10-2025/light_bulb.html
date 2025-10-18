@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Light Bulb</title>
+	<style>
+        #bulb {
+            background-color: black;
+            height: 50px;
+            width: 50px;
+            border-radius: 100px;
+            border: 2px solid grey;
+        }
+        .switch {
+            display: flex;
+            margin-top: 10px;
+        }
+        .switch-item {
+            height: 20px;
+            width: 50px;
+            margin-right: 10px;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 2px;
+            border: none;
+        }
+        #on-switch {
+            background-color: green;
+        }
+        #off-switch {
+            background-color: red;
+        }
+        .main {
+            background-color: black;
+        }
+	</style>
+</head>
+<body class="main">
+    <div>
+        <div id="bulb"></div>
+        <div class="switch">
+            <button class="switch-item" id="on-switch" onclick="switchOnLight()">ON</button>
+            <button class="switch-item" id="off-switch" onclick="switchOffLight()">OFF</button>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    const lightBulb = document.getElementById("bulb");
+    function switchOnLight() {
+        lightBulb.style.backgroundColor = "white";
+        lightBulb.style.boxShadow = "10px 10px 50px rgba(255,255,255,0.5)";
+    }
+    function switchOffLight() {
+        lightBulb.style.backgroundColor = "black";
+        lightBulb.style.boxShadow = "none";
+    }
+</script>
