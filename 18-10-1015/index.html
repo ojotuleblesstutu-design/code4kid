@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Basics</title>
+    </head>
+    <body>
+        <div style="display: flex;">
+            <input id="age" placeholder="Type your age"/>
+            <button onclick="checkQualification()">Check Qualification</button>
+        </div>
+    </body>
+</html>
+
+<script>
+    function checkQualification() {
+        const ageElementValue = document.getElementById('age').value;
+        const age = parseInt(ageElementValue);
+
+        if (age > 50 ) {
+            alert("You are too old!");
+        } else if (age >= 10) {
+            alert("You can join the coding club!");
+        } else {
+            alert("You are too young for now.");
+        }
+    }
+   
+</script>
