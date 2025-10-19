@@ -1,1 +1,212 @@
-<!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ojotule Blessing Baba | Personal Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background: #ea4c89;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      border-bottom: 3px solid #d43d77;
+    }
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Sections */
+    section {
+      max-width: 1000px;
+      background: white;
+      margin: 40px auto;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    /* Home Section */
+    .home-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .home-text {
+      flex: 1;
+      min-width: 250px;
+    }
+    .home-text h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+    .home-text span {
+      color: #ea4c89;
+    }
+    .home-text p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .home-btn {
+      padding: 10px 25px;
+      background: #ea4c89;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+    .home-btn:hover {
+      background: #d43d77;
+    }
+    .home-image img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      border: 4px solid black;
+    }
+
+    /* Skills */
+    ul {
+      list-style: square;
+      line-height: 1.8;
+      padding-left: 20px;
+    }
+
+    /* Contact form */
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 2px solid #ea4c89;
+      border-radius: 20px;
+      font-size: 15px;
+    }
+    form button {
+      margin-top: 15px;
+      background-color: #ea4c89;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    form button:hover {
+      background-color: #d43d77;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: gray;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .home-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .home-image img {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- HOME -->
+  <section id="home">
+    <div class="home-content">
+      <div class="home-text">
+        <h1>Hi, I’m <span>Ojotule Blessing Baba</span> ??</h1>
+        <p>I’m 14 years old and a student from Nigeria who loves learning, drawing, coding, and praying. I enjoy creating clean and simple websites as I continue to grow my web development skills.</p>
+        <button class="home-btn" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">Learn More</button>
+      </div>
+      <div class="home-image">
+        <img src="https://image2url.com/images/1756976627014-55d6b284-498d-4e6a-b344-a68ae3cad034.png" alt="Ojotule Profile Picture">
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I’m <strong>Ojotule Blessing Baba</strong>, a creative and curious learner who loves exploring technology. I started learning web development using HTML, CSS, and JavaScript, and I’m working towards becoming a full-stack developer someday.</p>
+    <p>Aside from coding, I enjoy drawing, reading, and praying. My dream is to use technology to make positive changes in the world and inspire others to learn.</p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>My Skills</h2>
+    <ul>
+      <li>HTML & CSS — Building and styling websites</li>
+      <li>Basic JavaScript — Making web pages interactive</li>
+      <li>Responsive Design — Ensuring websites look good on phones and computers</li>
+      <li>Git & GitHub — Saving and sharing my code</li>
+      <li>Basic UI Design — Creating clean and user-friendly layouts</li>
+    </ul>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>My Projects</h2>
+    <p>Here are a few things I’ve worked on so far (and more coming soon!):</p>
+    <ul>
+      <li><strong>Personal Website:</strong> This website, built with HTML and CSS.</li>
+      <li><strong>Simple Calculator:</strong> A small calculator app using HTML, CSS, and JavaScript (coming soon).</li>
+      <li><strong>Portfolio Page:</strong> A page to showcase my future web projects and designs.</li>
+    </ul>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>If you’d like to reach out, feel free to send me a message using the form below or email me directly:</p>
+    <p>?? <strong>ojotuleblesstutu@gmail.com</strong></p>
+    <form>
+      <label>Your Name</label>
+      <input type="text" placeholder="Enter your name" required>
+      <label>Your Email</label>
+      <input type="email" placeholder="Enter your email" required>
+      <label>Your Message</label>
+      <textarea rows="5" placeholder="Write your message..." required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 Ojotule Blessing Baba | Made with ?? in Nigeria
+  </footer>
+
+</body>
+</html>
