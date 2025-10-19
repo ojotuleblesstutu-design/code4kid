@@ -1,0 +1,20 @@
+<!Doctype html>
+<html>
+<head>
+</head>
+<body>
+	<input id="gender"/><button onclick="checkGender()">Click me</button>
+</body>
+</html>
+<script>
+	function checkGender() {
+		const gender = document.getElementById("gender").value;
+		if (gender == "girl") {
+			alert("you can join the club");
+		} else if (gender == "female") {
+			alert("you can join the club too");
+		} else {
+			alert("you cannot join this club");
+		}
+	}
+</script>
