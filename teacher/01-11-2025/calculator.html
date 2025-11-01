@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Calculator</title>
+	<style>
+		.button{
+			margin-top:10px;
+			margin-left:10px;
+			width:50px;
+			height:50px;
+			border:none;
+			border-radius:10px;
+			font-size:18px;
+			cursor:pointer
+		}
+		.button:hover{
+			background-color:#e9e9edb5;
+		}
+		#screen {
+			background-color: #e9edef;
+			height: 81px;
+			width: 234px;
+			border-radius: 10px;
+			font-size: 20px;
+			padding: 10px;
+			font-weight: bold;
+			position: relative;
+		}
+		#result-holder {
+			position: absolute;
+			bottom: 5px;
+			right: 8px;
+			font-size: 25px;
+		}
+		#value-holder {
+			word-wrap: break-word;
+		}
+	</style>
+</head>
+<body style=" display: flex; justify-content: center;background-color:#e9edef">
+	<div style="background-color:white;height:350px;width:250px;padding:30px;;border-radius:10px">
+		<div id="screen">
+			<div id="value-holder"></div>
+			<div id="result-holder"></div>
+		</div>
+		<div style="display: flex;">
+			<button class="button">7</button>
+			<button class="button">8</button>
+			<button class="button">9</button>
+			<button class="button">/</button>
+		</div>
+		<div style="display: flex;">
+			<button class="button">4</button>
+			<button class="button">5</button>
+			<button class="button">6</button>
+			<button class="button">*</button>
+		</div>
+		<div style="display: flex;">
+			<button class="button">1</button>
+			<button class="button">2</button>
+			<button class="button">3</button>
+			<button class="button">-</button>
+		</div>
+		<div style="display: flex;">
+			<button class="button">0</button>
+			<button class="button">C</button>
+			<button class="button">=</button>
+			<button class="button">+</button>
+		</div>
+	</div>
+</body>
+</html>
+
+<script>
+	let resultNumber = 0;
+	const resultElement = document.getElementById("result-holder");
+	resultElement.innerHTML = resultNumber;
+
+	const allButtons = document.getElementsByClassName("button");
+	Array.from(allButtons).forEach(e => {
+		e.addEventListener("click", () => {
+			const key = e.textContent;
+			if (key === "C") {
+				clearing();
+			} else {
+				implementCalculation(key);
+			}
+		});
+	})
+
+	function clearing() {
+		const valueElement = document.getElementById("value-holder");
+		const resultElement = document.getElementById("result-holder");
+		valueElement.innerHTML = "";
+		resultElement.innerHTML = 0;
+	}
+
+	function addToScreen(key) {
+		const valueElement = document.getElementById("value-holder");
+		let oldContent = valueElement.innerHTML;
+		const newContent = oldContent + key;
+		valueElement.innerHTML = newContent;
+	}
+
+	let firstBag = ""
+	let secondBag = "";
+	let moveToSecondBag = false;
+	let existingOperator = ""
+	let lastKey = ""
+	function implementCalculation(key) {
+		let addKeyToScreen = true;
+		if (key === "1" || key === "2" || key === "3" || key === "4" || key === "5" || key === "6" || key === "7" || key === "8" || key === "9" || key === "0") {
+			if (!moveToSecondBag) {
+				firstBag = firstBag + key;
+			} else {
+				secondBag = secondBag + key;
+			}
+		} else if (key === "+" || key === "-" || key === "/" || key === "*") {
+			if (lastKey == "+" || lastKey === "-" || lastKey === "/" || lastKey === "*") {
+				addKeyToScreen = false;
+			} else {
+				if (existingOperator) {
+					performCalculation();
+				} if (firstBag && secondBag) {
+					performCalculation();
+				} else {
+					moveToSecondBag = true;
+				}
+				existingOperator = key;
+			}
+		} else if (key === "=") {
+			performCalculation()
+		}
+		
+		if (key !== "=" && addKeyToScreen) {
+			addToScreen(key);
+			lastKey = key;
+		}
+	}
+
+	function performCalculation() {
+		if (firstBag && secondBag && existingOperator) {
+			if (existingOperator === "+") {
+				resultNumber = parseInt(firstBag) + parseInt(secondBag);
+				firstBag = resultNumber
+				resultElement.innerHTML = resultNumber;
+			} else if (existingOperator === "-") {
+				resultNumber = parseInt(firstBag) - parseInt(secondBag);
+				firstBag = resultNumber
+				resultElement.innerHTML = resultNumber;
+			} else if (existingOperator === "/") {
+				resultNumber = parseInt(firstBag) / parseInt(secondBag);
+				firstBag = resultNumber
+				resultElement.innerHTML = resultNumber;
+			} else if (existingOperator === "*") {
+				resultNumber = parseInt(firstBag) * parseInt(secondBag);
+				firstBag = resultNumber
+				resultElement.innerHTML = resultNumber;
+			}
+			secondBag = "";
+			existingOperator = "";
+		}
+	}
+
+</script>
