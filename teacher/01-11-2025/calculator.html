@@ -87,6 +87,7 @@
 
 	// Set up all buttons to respond to clicks
 	const allButtons = document.getElementsByClassName("button");
+
 	Array.from(allButtons).forEach(button => {
 		button.addEventListener("click", () => {
 			const key = button.textContent;
@@ -109,22 +110,6 @@
 		resultElement.innerHTML = "0";
 	}
 
-	// Add a number or operator to the screen display
-	function addToScreen(key) {
-		valueElement.innerHTML += key;
-	}
-
-	// Check if a key is a number (0-9)
-	// We check if the key is one of the digit characters
-	function isNumber(key) {
-		return key === "0" || key === "1" || key === "2" || key === "3" || key === "4" || key === "5" || key === "6" || key === "7" || key === "8" || key === "9";
-	}
-
-	// Check if a key is an operator (+, -, *, /)
-	function isOperator(key) {
-		return key === "+" || key === "-" || key === "*" || key === "/";
-	}
-
 	// Handle when any button is pressed (except Clear)
 	function handleButtonPress(key) {
 		if (isNumber(key)) {
@@ -137,6 +122,17 @@
 			// User pressed equals
 			calculateResult();
 		}
+	}
+
+	// Check if a key is a number (0-9)
+	// We check if the key is one of the digit characters
+	function isNumber(key) {
+		return key === "0" || key === "1" || key === "2" || key === "3" || key === "4" || key === "5" || key === "6" || key === "7" || key === "8" || key === "9";
+	}
+
+	// Check if a key is an operator (+, -, *, /)
+	function isOperator(key) {
+		return key === "+" || key === "-" || key === "*" || key === "/";
 	}
 
 	// Handle when a number button is pressed
@@ -156,36 +152,43 @@
 		lastKeyPressed = key;
 	}
 
+	// Add a number or operator to the screen display
+	function addToScreen(key) {
+		valueElement.innerHTML = valueElement.innerHTML + key;
+	}
+
 	// Handle when an operator button is pressed
 	function handleOperatorPress(key) {
 		// If the last key was also an operator, replace it instead of adding a new one
 		if (isOperator(lastKeyPressed)) {
 			// Replace the operator on screen
 			let currentDisplay = valueElement.innerHTML;
-			valueElement.innerHTML = currentDisplay.slice(0, -1) + key;
+
+			// Remove the last character (the old operator) and add the new operator
+			let displayWithoutLastChar = currentDisplay.slice(0, -1);
+			valueElement.innerHTML = displayWithoutLastChar + key;
 			operator = key;
 			lastKeyPressed = key;
 			return;
-		}
-
-		// If we already have a complete calculation (both numbers and operator), calculate first
-		let shouldCalculate = firstNumber && operator && secondNumber;
-		if (shouldCalculate) {
-			calculateResult();
-		}
-
-		// If the last key was "=" or we just calculated, update display to show result with new operator
-		if (lastKeyPressed === "=" || shouldCalculate) {
-			valueElement.innerHTML = firstNumber + key;
 		} else {
-			// Otherwise, just add the operator to what's already on screen
-			addToScreen(key);
-		}
+			// If we already have a complete calculation (both numbers and operator), calculate first
+			if (firstNumber && operator && secondNumber) {
+				calculateResult();
+			}
 
-		// Set the new operator
-		operator = key;
-		isEnteringSecondNumber = true;
-		lastKeyPressed = key;
+			// If the last key was "=" or we just calculated, update display to show result with new operator
+			if (lastKeyPressed === "=" || (firstNumber && operator && secondNumber)) {
+				valueElement.innerHTML = firstNumber + key;
+			} else {
+				// Otherwise, just add the operator to what's already on screen
+				addToScreen(key);
+			}
+
+			// Set the new operator
+			operator = key;
+			isEnteringSecondNumber = true;
+			lastKeyPressed = key;
+		}
 	}
 
 	// Calculate and show the result
@@ -211,10 +214,10 @@
 			// Check for division by zero
 			if (num2 === 0) {
 				resultElement.innerHTML = "Error";
-				clearCalculator();
 				return;
+			} else {
+				result = num1 / num2;
 			}
-			result = num1 / num2;
 		}
 
 		// Show the result

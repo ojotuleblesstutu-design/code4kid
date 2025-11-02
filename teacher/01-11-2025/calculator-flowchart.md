@@ -67,14 +67,6 @@ flowchart TD
 
     ShowResult --> PrepNext[Prepare for next calculation:<br/>firstNumber = result.toString<br/>secondNumber = ''<br/>operator = ''<br/>isEnteringSecondNumber = false<br/>lastKeyPressed = '=']
     PrepNext --> End
-
-    style Start fill:#e1f5ff
-    style End fill:#ffe1f5
-    style Clear fill:#fff4e1
-    style HandleNum fill:#e1ffe1
-    style HandleOp fill:#ffe1f5
-    style Calc fill:#f5e1ff
-    style ShowError fill:#ffcccc
 ```
 
 ## Key Functions Overview
