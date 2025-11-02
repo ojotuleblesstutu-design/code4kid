@@ -147,10 +147,10 @@
 			firstNumber = key;
 		} else if (isEnteringSecondNumber) {
 			// Add to second number
-			secondNumber += key;
+			secondNumber = secondNumber + key;
 		} else {
 			// Add to first number
-			firstNumber += key;
+			firstNumber = firstNumber + key;
 		}
 		addToScreen(key);
 		lastKeyPressed = key;
